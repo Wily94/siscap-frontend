@@ -1,0 +1,67 @@
+$sidebar-width: 260px;
+$text-active: #2563eb;
+$text-idle: #1e293b; // Azul medianoche muy oscuro (casi negro)
+$icon-idle: #334155; // Gris pizarra oscuro para los iconos
+$bg-sidebar: #ffffff;
+
+.sidebar {
+  width: $sidebar-width;
+  background-color: $bg-sidebar !important;
+  border-right: 1px solid #e2e8f0;
+
+  .logo-container {
+    padding: 3rem 1rem 2rem;
+    text-align: center;
+    .logo-text {
+      color: $text-active;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+  }
+
+  nav {
+    padding: 0 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 16px;
+      text-decoration: none !important;
+      
+      // ESTO ES LO CLAVE:
+      color: $text-idle !important; 
+      font-weight: 700; // Fuente más gruesa
+      font-size: 0.92rem;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+
+      svg {
+        font-size: 1.25rem;
+        color: $icon-idle !important; // Iconos bien visibles
+        min-width: 22px;
+      }
+
+      &:hover {
+        background-color: #f1f5f9;
+        color: $text-active !important;
+        
+        svg { color: $text-active !important; }
+      }
+
+      &.active {
+        background-color: #eff6ff !important;
+        color: $text-active !important;
+        
+        svg { color: $text-active !important; }
+
+        // Borde lateral más grueso para que se note
+        border-left: 5px solid $text-active;
+        border-radius: 2px 8px 8px 2px;
+      }
+    }
+  }
+}

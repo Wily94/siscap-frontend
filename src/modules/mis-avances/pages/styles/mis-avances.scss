@@ -1,0 +1,43 @@
+$blue-primary: #2563eb;
+$gray-light: #f1f5f9;
+$green-success: #22c55e;
+
+.advances-view {
+  .advance-card {
+    .project-tag {
+      font-size: 0.7rem;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .progress-container {
+      margin-top: 1.5rem;
+      
+      .progress-info {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #475569;
+      }
+
+      .progress-bar-bg {
+        height: 10px;
+        background: $gray-light;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .progress-bar-fill {
+        height: 100%;
+        background: linear-gradient(90deg, $blue-primary, $green-success);
+        transition: width 0.5s ease-in-out;
+      }
+    }
+  }
+}

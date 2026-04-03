@@ -1,0 +1,32 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+}
+
+form {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  padding: 10px;
+  border: none;
+}
+
+.error {
+  color: red;
+}

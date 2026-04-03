@@ -1,0 +1,148 @@
+$blue-primary: #2563eb;
+$blue-hover: #1d4ed8;
+$gray-border: #e2e8f0;
+$text-main: #1e293b;
+$text-muted: #64748b;
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid $gray-border;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin: 1rem; // Un pequeño margen para que no pegue a los bordes
+  font-family: sans-serif;
+
+  .list-header {
+    position: sticky;
+    top: 0; 
+    z-index: 10;
+    background: #ffffff;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $gray-border;
+
+    .header-info {
+      h2 { margin: 0; font-size: 1.5rem; color: $text-main; }
+      p { margin: 0; font-size: 0.875rem; color: $text-muted; }
+    }
+  }
+
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead th {
+      background: #f8fafc;
+      padding: 1rem 1.5rem;
+      text-align: left;
+      font-size: 0.75rem;
+      color: $text-muted;
+      border-bottom: 2px solid $gray-border;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #f1f5f9;
+      &:hover { background: #f8fafc; }
+      td { padding: 1rem 1.5rem; color: $text-main; }
+    }
+  }
+
+  // Mover los componentes dentro para asegurar que apliquen
+  .badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    display: inline-block;
+    &.active { background: #dcfce7; color: #166534; }
+    &.inactive { background: #f1f5f9; color: #475569; }
+  }
+
+  .btn-primary {
+    background: $blue-primary;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    &:hover { background: $blue-hover; }
+  }
+
+  .action-group {
+    display: flex;
+    gap: 8px;
+    
+    .btn-icon {
+      background: #f8fafc;
+      border: 1px solid $gray-border;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      &.btn-edit { color: #d97706; }
+      &.btn-delete { color: #dc2626; }
+    }
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    h2 { margin: 0; font-size: 1.25rem; color: #1e293b; }
+    .close-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; }
+    input, select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      &:focus { outline: 2px solid #2563eb; }
+    }
+  }
+
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+    
+    .btn-secondary { background: #f1f5f9; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; }
+  }
+}

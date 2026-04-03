@@ -1,0 +1,55 @@
+/* Reset básico para evitar márgenes extraños */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;      /* Ocupa exactamente el alto de la pantalla */
+  width: 100vw;       /* Ocupa exactamente el ancho de la pantalla */
+  overflow: hidden;   /* PROHIBIDO el scroll en el nivel más externo */
+}
+
+.layout-body {
+  display: flex;
+  flex: 1;            /* Ocupa todo el espacio debajo del Navbar */
+  overflow: hidden;   /* PROHIBIDO el scroll aquí también */
+  width: 100%;
+}
+
+.sidebar {
+  width: 260px;       /* Ancho fijo */
+  min-width: 260px;
+  background-color: #2b3a57;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;   /* Permite scroll solo si el menú es muy largo */
+  z-index: 5;
+}
+
+.layout-content {
+  flex: 1;            /* Toma TODO el ancho restante de forma automática */
+  background-color: #f4f7fc;
+  padding: 24px;
+  overflow-y: auto;   /* ÚNICA BARRA DE SCROLL VERTICAL PERMITIDA */
+  overflow-x: hidden; /* Evita la barra inferior molesta */
+  position: relative;
+}
+
+/* Navbar: Ya no necesita fixed, Flexbox lo mantiene arriba */
+.navbar {
+  height: 64px;
+  min-height: 64px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 10;
+}
+

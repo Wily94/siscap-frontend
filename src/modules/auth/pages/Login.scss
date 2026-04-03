@@ -1,0 +1,140 @@
+/* CONTENEDOR GENERAL */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between; /* Distribuye el formulario a la derecha y la imagen a la izquierda */
+  align-items: center;
+  background: #ffffff; /* Fondo blanco */
+}
+
+/* IMAGEN DE FONDO */
+.login-image-container {
+  flex: 7; /* 70% de la pantalla */
+  height: 100%;
+  background: url('/src/assets/Flux_Dev_Crea_una_imagen_moderna_y_profesional_para_usar_como__3.jpg') no-repeat center center/cover;
+  background-size: cover;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  position: relative;
+
+  /* Texto sobre la imagen */
+  .text-container {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+
+    /* Texto */
+    p {
+      margin: 0;
+    }
+  }
+}
+
+/* FORMULARIO */
+.login-form-container {
+  background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
+  padding: 3rem;
+  border-radius: 12px;
+  width: 380px; /* Ajusta el tamaño del formulario */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  /* Logo */
+  .logo {
+    width: 180px;
+    margin: 0 auto 20px; /* Centrado horizontal */
+  }
+
+  /* Título */
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1d4ed8;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  /* CONTENEDOR DE LOS INPUTS Y BOTÓN */
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaciado entre los campos y el botón */
+    
+    /* Asegura que todos los elementos dentro del contenedor tengan el mismo ancho */
+    input, button {
+      width: 100%;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: #f9fafb;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    }
+
+    button {
+      width: 50%;
+      margin: 0 auto 20px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    button:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
+  }
+
+  /* ERROR */
+  .error {
+    color: #ef4444;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* CONTENEDOR PASSWORD */
+  .password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  /* INPUT PASSWORD */
+  .password-container input {
+    width: 100%; /* Asegura que el input de contraseña tenga el mismo ancho que el de usuario */
+    padding-right: 40px; /* Espacio para el ícono */
+  }
+
+  /* ICONO */
+  .eye-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #64748b;
+    font-size: 18px;
+  }
+
+  .eye-icon:hover {
+    color: #2563eb;
+  }
+}

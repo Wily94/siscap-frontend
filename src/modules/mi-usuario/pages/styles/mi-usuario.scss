@@ -1,0 +1,88 @@
+// Variables (asegúrate de que coincidan con tus globales)
+$blue-primary: #2563eb;
+$gray-border: #e2e8f0;
+$text-main: #1e293b;
+$text-muted: #64748b;
+$bg-light: #f8fafc;
+
+.profile-view {
+  .list-body {
+    padding: 2rem;
+    background-color: $bg-light;
+    min-height: 300px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  .profile-details-grid {
+    display: grid;
+    // Crea columnas responsivas (mínimo 250px)
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+
+    .detail-card {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 1px solid $gray-border;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+      transition: all 0.2s ease;
+
+      &:hover {
+        border-color: $blue-primary;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: $text-muted;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.75rem;
+
+        svg {
+          color: $blue-primary;
+          font-size: 1rem;
+        }
+      }
+
+      p {
+        margin: 0;
+        font-size: 1.1rem;
+        color: $text-main;
+        font-weight: 500;
+        word-break: break-all; // Evita que emails largos rompan el diseño
+      }
+    }
+  }
+
+  // Ajuste para el badge dentro de la card
+  .badge {
+    margin-top: 0.25rem;
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+    &.admin {
+            background: #fef3c7; // Amarillo/Dorado muy claro
+            color: #92400e; // Marrón/Dorado oscuro
+            border: 1px solid #fcd34d;
+        }
+    
+        &.user {
+            background: #e0f2fe; // Azul muy claro
+            color: #075985; // Azul oscuro
+            border: 1px solid #bae6fd;
+        }
+  }
+}
+
+// Estilo para el estado de carga
+.text-center.py-5 {
+  padding: 5rem 0;
+  color: $text-muted;
+  font-style: italic;
+}
+
